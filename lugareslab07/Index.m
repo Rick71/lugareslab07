@@ -17,13 +17,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    //---------------------------------------------------------------------------
+    //agregar para el Banner paso 01.
     [self cfgiAdBanner];
+    //---------------------------------------------------------------------------
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+//-------------------------------------------------------------------------------
+// Agregar para el Banner paso 02.
+
 - (void)cfgiAdBanner
 {
     // Setup iAdView
@@ -86,5 +94,15 @@
     // [video resume];
     // [audio resume];
 }
+//----------------------------------------------------------------------------------------------
+
+- (IBAction)BtnListaBares:(id)sender {
+    [self performSegueWithIdentifier:@"SegueIndexToMuestraDB" sender:self];
+}
+
+- (IBAction)BtnCrearRegistro:(id)sender {
+    [self performSegueWithIdentifier:@"SegueIndexToDataBase" sender:self];
+}
+
 
 @end

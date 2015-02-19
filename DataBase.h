@@ -8,8 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import <iAd/iAd.h>
 
-@interface DataBase : UIViewController
+//-----------------------------------------------------------------------------------------------------
+//agregar para banner.<UIApplicationDelegate, ADBannerViewDelegate>
+
+@interface DataBase : UIViewController<UIApplicationDelegate, ADBannerViewDelegate>
+{
+    ADBannerView *adView;
+    BOOL bannerIsVisible;
+}
+//-----------------------------------------------------------------------------------------------------
 
 //Label
 @property (strong, nonatomic) IBOutlet UILabel *LblTitulo;
@@ -22,5 +31,6 @@
 
 //Buton Action
 - (IBAction)BtnGuardar:(id)sender;
+- (IBAction)BtnInicio:(id)sender;
 
 @end

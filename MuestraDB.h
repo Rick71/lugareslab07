@@ -8,8 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import <iAd/iAd.h>
 
-@interface MuestraDB : UIViewController<UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate>
+//-----------------------------------------------------------------------------------------------------
+//agregar para banner.<UIApplicationDelegate, ADBannerViewDelegate>
+
+@interface MuestraDB : UIViewController<UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate, UIApplicationDelegate, ADBannerViewDelegate>
+{
+    ADBannerView *adView;
+    BOOL bannerIsVisible;
+}
+
+//-----------------------------------------------------------------------------------------------------
 
 //Buttons
 - (IBAction)BtnInicio:(id)sender;
@@ -27,6 +37,5 @@
 
 
 //Actions
-
 
 @end
