@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <iAd/iAd.h>
 
-@interface Index : UIViewController
-
+@interface Index : UIViewController<UIApplicationDelegate, ADBannerViewDelegate>
+{
+    ADBannerView *adView;
+    BOOL bannerIsVisible;
+}
 
 @end
 

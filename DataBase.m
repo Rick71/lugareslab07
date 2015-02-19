@@ -8,6 +8,7 @@
 
 #import "DataBase.h"
 
+
 @interface DataBase ()
 
 @end
@@ -18,15 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     // Get all Values of class in parse core.
-    
-    PFQuery *query = [PFQuery queryWithClassName:@"Lugar"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        for (id object in objects){
-            NSLog(@"%@", object[@"name"]);
-        }
-            
-    }];
-}
+    }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -42,6 +35,7 @@
     // Pass the selected object to the new view controller.
 }
 */
+
 
 
 - (IBAction)BtnGuardar:(id)sender {
