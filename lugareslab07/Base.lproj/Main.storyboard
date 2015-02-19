@@ -196,7 +196,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="WJ8-hn-rOU" userLabel="ImageLugar">
-                                                    <rect key="frame" x="8" y="0.0" width="1687" height="64"/>
+                                                    <rect key="frame" x="8" y="0.0" width="2007" height="64"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -270,7 +270,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="TblMain" destination="N3X-hH-onw" id="Zvr-gH-MTd"/>
-                        <segue destination="BZ0-bD-Edr" kind="modal" identifier="SageMuestraDBToMapas" id="UjV-gC-oTr"/>
+                        <segue destination="BZ0-bD-Edr" kind="modal" identifier="SagueMuestraDBToMapas" id="UjV-gC-oTr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dN4-he-ngL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -330,14 +330,24 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.18714295060686326" green="0.22550339761880467" blue="1" alpha="0.17000000000000001" colorSpace="calibratedRGB"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6Dx-Cl-0DN">
+                                <rect key="frame" x="114" y="95" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Google Maps">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="BtnGoogleMaps:" destination="BZ0-bD-Edr" eventType="touchUpInside" id="MgC-o2-CMf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <segue destination="ftS-bA-0rI" kind="modal" identifier="SegueMapasToMuestraDB" id="fgM-YH-sri"/>
-                        <segue destination="ftS-bA-0rI" kind="modal" identifier="SegueMapasToMuestraDB" id="JL9-Zb-g3s"/>
                         <segue destination="oNJ-O1-z5l" kind="modal" identifier="SegueMapasToGogleMaps" id="xva-GR-AHF"/>
+                        <segue destination="vXZ-lx-hvc" kind="modal" identifier="SegueMapasToIndex" id="iP4-qv-GdK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XGk-Hq-gVy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -347,7 +357,7 @@
         <!--GoogleMaps-->
         <scene sceneID="JL1-SP-Vvc">
             <objects>
-                <viewController id="oNJ-O1-z5l" userLabel="GoogleMaps" sceneMemberID="viewController">
+                <viewController id="oNJ-O1-z5l" userLabel="GoogleMaps" customClass="GoogleMaps" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MQ6-zD-AqX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -360,7 +370,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MP7-MX-Peb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MP7-MX-Peb" userLabel="LabelAzulMarino">
                                 <rect key="frame" x="0.0" y="81" width="320" height="6"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.15368420050000001" green="0.06200273135" blue="0.63658065029999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -377,17 +387,21 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="vXZ-lx-hvc" kind="modal" id="Vmu-yD-98x"/>
+                                    <action selector="BtnInicio:" destination="oNJ-O1-z5l" eventType="touchUpInside" id="3ZM-eS-Cmn"/>
+                                    <segue destination="vXZ-lx-hvc" kind="modal" identifier="SegueGoogleMapsToIndex" id="Vmu-yD-98x"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5OD-fX-ZFd">
                                 <rect key="frame" x="236" y="47" width="68" height="38"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Mapas">
+                                <state key="normal" title="Mapa">
                                     <color key="titleColor" red="0.15368420050000001" green="0.06200273135" blue="0.63658065029999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="BtnMapas:" destination="oNJ-O1-z5l" eventType="touchUpInside" id="8BE-lU-VYZ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="A1n-Fm-Ues">
                                 <rect key="frame" x="117" y="47" width="87" height="38"/>
@@ -397,13 +411,16 @@
                                     <color key="titleColor" red="0.15368420050000001" green="0.06200273135" blue="0.63658065029999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="BtnLista:" destination="oNJ-O1-z5l" eventType="touchUpInside" id="xkX-dO-mu2"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <segue destination="BZ0-bD-Edr" kind="modal" id="XUN-6S-UvW"/>
-                        <segue destination="ftS-bA-0rI" kind="modal" id="vtM-0b-bMD"/>
+                        <segue destination="BZ0-bD-Edr" kind="modal" identifier="SegueGoogleMapsToMapas" id="XUN-6S-UvW"/>
+                        <segue destination="ftS-bA-0rI" kind="modal" identifier="SegueGoogleMapsToMuestraDB" id="vtM-0b-bMD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AMt-gY-W6S" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -417,8 +434,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="6gy-KQ-S0L"/>
-        <segue reference="ZoK-Mg-jp3"/>
-        <segue reference="UjV-gC-oTr"/>
+        <segue reference="Vmu-yD-98x"/>
+        <segue reference="XUN-6S-UvW"/>
+        <segue reference="vtM-0b-bMD"/>
     </inferredMetricsTieBreakers>
 </document>

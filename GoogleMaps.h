@@ -1,5 +1,5 @@
 //
-//  Mapas.h
+//  GoogleMaps.h
 //  lugareslab07
 //
 //  Created by Ricardo Vera on 19/02/15.
@@ -12,16 +12,19 @@
 //-----------------------------------------------------------------------------------------------------
 //agregar para banner.<UIApplicationDelegate, ADBannerViewDelegate>
 
-@interface Mapas : UIViewController<UIApplicationDelegate, ADBannerViewDelegate>
+@interface GoogleMaps : UIViewController<UIApplicationDelegate, ADBannerViewDelegate>
 {
     ADBannerView *adView;
     BOOL bannerIsVisible;
 }
-//---------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------
 
-//Actions.
+
+//Labels
+
+//Actions
 - (IBAction)BtnInicio:(id)sender;
+- (IBAction)BtnMapas:(id)sender;
 - (IBAction)BtnLista:(id)sender;
-- (IBAction)BtnGoogleMaps:(id)sender;
 
 @end

@@ -197,10 +197,12 @@ Table Functios
 
 
 - (IBAction)BtnInicio:(id)sender {
+
+    [self performSegueWithIdentifier:@"SegueMuestraDBToIndex" sender:self];
 }
 
 - (IBAction)BtnMapa:(id)sender {
-    [self performSegueWithIdentifier:@"SegueMuestraDBToMapas" sender:self];
+    [self performSegueWithIdentifier:@"SagueMuestraDBToMapas" sender:self];
 }
 
 - (IBAction)BtnRefresh:(id)sender {
