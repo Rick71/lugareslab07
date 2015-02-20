@@ -62,6 +62,17 @@ GMSMarker *markerInicio;
     markerInicio.map = mapView;
     
     [self.Mapa addSubview:mapView];
+    [self localiza];
+}
+
+- (void)localiza{
+    CLGeocoder * geoCoder = [[CLGeocoder alloc] init];
+    [geoCoder reverseGeocodeLocation:self.locationManager.location completionHandler:^(NSArray *placemarks, NSError *error)
+     {
+         float mapLat = self.locationManager.location.coordinate.latitude;
+         float mapLng = self.locationManager.location.coordinate.longitude;
+         mapView.camera = [GMSCameraPosition cameraWithLatitude:mapLat longitude:mapLng zoom:16];
+     }];
 }
 
 /*
@@ -152,6 +163,37 @@ GMSMarker *markerInicio;
 - (IBAction)BtnGoogleMaps:(id)sender {
     [self performSegueWithIdentifier:@"SegueMapasToGogleMaps" sender:self];
     
+}
+
+/**********************************************************************************************
+ Localization
+ **********************************************************************************************/
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    self.location = locations.lastObject;
+    NSLog( @"didUpdateLocation!");
+    CLGeocoder * geoCoder = [[CLGeocoder alloc] init];
+    [geoCoder reverseGeocodeLocation:self.locationManager.location completionHandler:^(NSArray *placemarks, NSError *error)
+     {
+         for (CLPlacemark *placemark in placemarks)
+         {
+             NSString *addressName = [placemark name];
+             NSString *city = [placemark locality];
+             NSString *administrativeArea = [placemark administrativeArea];
+             NSString *country  = [placemark country];
+             NSString *countryCode = [placemark ISOcountryCode];
+             //NSLog(@"name is %@ and locality is %@ and administrative area is %@ and country is %@ and country code %@", addressName, city, administrativeArea, country, countryCode);
+             strUserLocation = [[administrativeArea stringByAppendingString:@","] stringByAppendingString:countryCode];
+             //NSLog(@"gstrUserLocation = %@", strUserLocation);
+         }
+         mlatitude = self.locationManager.location.coordinate.latitude;
+         //[mUserDefaults setObject: [[NSNumber numberWithFloat:mlatitude] stringValue] forKey: pmstrLatitude];
+         mlongitude = self.locationManager.location.coordinate.longitude;
+         //[mUserDefaults setObject: [[NSNumber numberWithFloat:mlatitude] stringValue] forKey: pmstrLatitude];
+         //NSLog(@"mlatitude = %f", mlatitude);
+         //NSLog(@"mlongitude = %f", mlongitude);
+         markerInicio.position = CLLocationCoordinate2DMake(mlatitude, mlongitude);
+     }];
 }
     
 

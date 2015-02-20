@@ -544,7 +544,10 @@
 				);
 				INFOPLIST_FILE = lugareslab07/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"$(PROJECT_DIR)/googlemaps/GoogleMaps.framework/GoogleMaps",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -560,7 +563,10 @@
 				);
 				INFOPLIST_FILE = lugareslab07/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"$(PROJECT_DIR)/googlemaps/GoogleMaps.framework/GoogleMaps",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
