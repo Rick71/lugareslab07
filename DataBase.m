@@ -27,6 +27,11 @@ UIAlertView     *alert;
     //----------------------------------------------------------------------------------------------------
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.screenName = @"DataBase Screen";
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

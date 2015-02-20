@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 //agregar para Banner.
 #import <iAd/iAd.h>
+#import "GAITrackedViewController.h"
 
 //---------------------------------------------------------------------------------------------------
 //al UIViewController agregar para banner.<UIApplicationDelegate, ADBannerViewDelegate>
 
-@interface Index : UIViewController<UIApplicationDelegate, ADBannerViewDelegate>
+@interface Index : GAITrackedViewController<UIApplicationDelegate, ADBannerViewDelegate>
 {
     ADBannerView *adView;
     BOOL bannerIsVisible;

@@ -9,11 +9,16 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import <GoogleMaps/GoogleMaps.h>
+#import "GAI.h"
+#import <Pushwoosh/PushNotificationManager.h>
+
 
 #define LOCATIONS_FILE @"PWLocationTracking"
 #define LOCATIONS_FILE_TYPE @"log"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<PushNotificationDelegate>{
+    PushNotificationManager *pushManager;
+}
 
 @end
 
@@ -32,7 +37,51 @@
     // [Optional] Track statistics around application opens.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
-    // ...
+    // Google Analitics
+    // Optional: automatically send uncaught exceptions to Google Analytics.
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    
+    // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
+    [GAI sharedInstance].dispatchInterval = 20;
+    
+    // Optional: set Logger to VERBOSE for debug information.
+    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
+    
+    // Initialize tracker. Replace with your tracking ID.
+    [[GAI sharedInstance] trackerWithTrackingId:@"UA-59436154-2"];
+    
+    // -------- push woosh
+    
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
+    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)])
+    {
+        // use registerUserNotificationSettings
+        // iOS 8 Notifications
+        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
+        
+        [application registerForRemoteNotifications];
+    } else
+    {
+        // use registerForRemoteNotifications
+    }
+#else
+    // use registerForRemoteNotifications
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes: (UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
+#endif
+    
+    pushManager = [PushNotificationManager pushManager];
+    pushManager.delegate = self;
+    [pushManager handlePushReceived:launchOptions];
+    
+    if ([launchOptions objectForKey:UIApplicationLaunchOptionsLocationKey]) {
+        
+        [pushManager startLocationTracking];
+    }
+    
+    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+    
+
+    
 return YES;
 }
 

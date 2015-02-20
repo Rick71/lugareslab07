@@ -31,6 +31,11 @@ NSMutableArray *objetos;
     
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.screenName = @"MuestraDB Screen";
+}
+
 -(void)reload{
     NSLog(@"Load");
     

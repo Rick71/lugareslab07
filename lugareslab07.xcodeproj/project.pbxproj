@@ -21,6 +21,13 @@
 		1D2480041A9701E10099471A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2480031A9701E10099471A /* CoreData.framework */; };
 		1D2480091A971C6B0099471A /* 1424439603_1_26.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D2480081A971C6B0099471A /* 1424439603_1_26.png */; };
 		1D2480121A9722590099471A /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2480111A9722590099471A /* libGoogleAnalyticsServices.a */; };
+		1D51AE161A975DB60072020A /* PushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D51AE151A975DB60072020A /* PushKit.framework */; };
+		1D8192881A97D87200B960CF /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D8192871A97D87200B960CF /* AdSupport.framework */; };
+		1D81928A1A97DF9800B960CF /* Pushwoosh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D8192891A97DF9800B960CF /* Pushwoosh.framework */; };
+		1D81928C1A97E27F00B960CF /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D81928B1A97E27F00B960CF /* Social.framework */; };
+		1D81928E1A97E2A900B960CF /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D81928D1A97E2A900B960CF /* Twitter.framework */; };
+		1D8192901A97E2B100B960CF /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D81928F1A97E2B100B960CF /* Accounts.framework */; };
+		1D8192931A97E32200B960CF /* FBMissingSymbols.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D8192921A97E32200B960CF /* FBMissingSymbols.m */; };
 		1D9F34B41A95DA3500B75192 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D9F34B31A95DA3500B75192 /* iAd.framework */; };
 		1D9F34BA1A95DFD500B75192 /* Mapas.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9F34B91A95DFD500B75192 /* Mapas.m */; };
 		1D9F34BD1A969F4700B75192 /* GoogleMaps.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9F34BC1A969F4700B75192 /* GoogleMaps.m */; };
@@ -87,6 +94,14 @@
 		1D24800F1A9722590099471A /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
 		1D2480101A9722590099471A /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
 		1D2480111A9722590099471A /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
+		1D51AE151A975DB60072020A /* PushKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PushKit.framework; path = System/Library/Frameworks/PushKit.framework; sourceTree = SDKROOT; };
+		1D8192871A97D87200B960CF /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		1D8192891A97DF9800B960CF /* Pushwoosh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pushwoosh.framework; path = Framework/Pushwoosh.framework; sourceTree = "<group>"; };
+		1D81928B1A97E27F00B960CF /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		1D81928D1A97E2A900B960CF /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		1D81928F1A97E2B100B960CF /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		1D8192911A97E32200B960CF /* FBMissingSymbols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBMissingSymbols.h; sourceTree = "<group>"; };
+		1D8192921A97E32200B960CF /* FBMissingSymbols.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBMissingSymbols.m; sourceTree = "<group>"; };
 		1D9F34B31A95DA3500B75192 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		1D9F34B81A95DFD500B75192 /* Mapas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Mapas.h; path = ../Mapas.h; sourceTree = "<group>"; };
 		1D9F34B91A95DFD500B75192 /* Mapas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Mapas.m; path = ../Mapas.m; sourceTree = "<group>"; };
@@ -138,6 +153,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D8192901A97E2B100B960CF /* Accounts.framework in Frameworks */,
+				1D81928E1A97E2A900B960CF /* Twitter.framework in Frameworks */,
+				1D81928C1A97E27F00B960CF /* Social.framework in Frameworks */,
+				1D8192881A97D87200B960CF /* AdSupport.framework in Frameworks */,
+				1D51AE161A975DB60072020A /* PushKit.framework in Frameworks */,
 				1D2480041A9701E10099471A /* CoreData.framework in Frameworks */,
 				1D2480021A9701BD0099471A /* libsqlite3.dylib in Frameworks */,
 				1D2480001A9701AF0099471A /* libz.dylib in Frameworks */,
@@ -164,6 +184,7 @@
 				1DB145B21A932533007CB0D4 /* libsqlite3.0.dylib in Frameworks */,
 				1DB145B01A932518007CB0D4 /* libstdc++.6.dylib in Frameworks */,
 				1DB145AE1A932494007CB0D4 /* libz.1.1.3.dylib in Frameworks */,
+				1D81928A1A97DF9800B960CF /* Pushwoosh.framework in Frameworks */,
 				1D247FF01A96FF770099471A /* GoogleMaps.framework in Frameworks */,
 				1DB145A91A932454007CB0D4 /* Parse.framework in Frameworks */,
 				1DB145AA1A932454007CB0D4 /* ParseCrashReporting.framework in Frameworks */,
@@ -217,6 +238,8 @@
 		1DB145691A931CD0007CB0D4 = {
 			isa = PBXGroup;
 			children = (
+				1D8192911A97E32200B960CF /* FBMissingSymbols.h */,
+				1D8192921A97E32200B960CF /* FBMissingSymbols.m */,
 				1DF382B91A94A07D00F4DB4F /* Customized */,
 				1DB145A11A932428007CB0D4 /* Frameworks */,
 				1DB145741A931CD0007CB0D4 /* lugareslab07 */,
@@ -288,6 +311,12 @@
 		1DB145A11A932428007CB0D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1D81928F1A97E2B100B960CF /* Accounts.framework */,
+				1D81928D1A97E2A900B960CF /* Twitter.framework */,
+				1D81928B1A97E27F00B960CF /* Social.framework */,
+				1D8192891A97DF9800B960CF /* Pushwoosh.framework */,
+				1D8192871A97D87200B960CF /* AdSupport.framework */,
+				1D51AE151A975DB60072020A /* PushKit.framework */,
 				1D24800A1A9722590099471A /* GoogleAnalytics */,
 				1D2480031A9701E10099471A /* CoreData.framework */,
 				1D2480011A9701BD0099471A /* libsqlite3.dylib */,
@@ -390,6 +419,7 @@
 				TargetAttributes = {
 					1DB145711A931CD0007CB0D4 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = QXF33N93KH;
 					};
 					1DB1458D1A931CD0007CB0D4 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -451,6 +481,7 @@
 				1D9F34BA1A95DFD500B75192 /* Mapas.m in Sources */,
 				1DB1457E1A931CD0007CB0D4 /* lugareslab07.xcdatamodeld in Sources */,
 				1DF382B81A949A2E00F4DB4F /* MuestraDB.m in Sources */,
+				1D8192931A97E32200B960CF /* FBMissingSymbols.m in Sources */,
 				1DF382BC1A94A11A00F4DB4F /* cellOaxaca.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -573,10 +604,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/parse-library-1.6.2",
 					"$(PROJECT_DIR)/googlemaps",
+					"$(PROJECT_DIR)/Framework",
 				);
 				INFOPLIST_FILE = lugareslab07/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -584,11 +617,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/GoogleAnalytics",
 				);
-				OTHER_LDFLAGS = (
-					"-force_load",
-					"$(PROJECT_DIR)/googlemaps/GoogleMaps.framework/GoogleMaps",
-				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "eecdee38-b60f-4bb6-9973-d73bef29de7d";
 			};
 			name = Debug;
 		};
@@ -596,10 +627,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/parse-library-1.6.2",
 					"$(PROJECT_DIR)/googlemaps",
+					"$(PROJECT_DIR)/Framework",
 				);
 				INFOPLIST_FILE = lugareslab07/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -607,11 +640,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/GoogleAnalytics",
 				);
-				OTHER_LDFLAGS = (
-					"-force_load",
-					"$(PROJECT_DIR)/googlemaps/GoogleMaps.framework/GoogleMaps",
-				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "eecdee38-b60f-4bb6-9973-d73bef29de7d";
 			};
 			name = Release;
 		};

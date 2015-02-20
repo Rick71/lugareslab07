@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 #import <iAd/iAd.h>
+#import "GAITrackedViewController.h"
 
 //-----------------------------------------------------------------------------------------------------
 //agregar para banner.<UIApplicationDelegate, ADBannerViewDelegate>
 
-@interface MuestraDB : UIViewController<UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate, UIApplicationDelegate, ADBannerViewDelegate>
+@interface MuestraDB : GAITrackedViewController<UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate, UIApplicationDelegate, ADBannerViewDelegate>
 {
     ADBannerView *adView;
     BOOL bannerIsVisible;

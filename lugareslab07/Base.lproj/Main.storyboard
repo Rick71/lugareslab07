@@ -189,7 +189,6 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="WJ8-hn-rOU" userLabel="ImageLugar">
-                                                    <rect key="frame" x="16" y="1" width="68" height="64"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descripcion" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JUD-2F-kog" userLabel="LblDescripcion">
@@ -449,8 +448,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="iP4-qv-GdK"/>
-        <segue reference="XUN-6S-UvW"/>
+        <segue reference="veH-oC-mTo"/>
         <segue reference="fgM-YH-sri"/>
+        <segue reference="UjV-gC-oTr"/>
     </inferredMetricsTieBreakers>
 </document>
