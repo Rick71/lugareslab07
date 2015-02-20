@@ -325,11 +325,6 @@
                                     <action selector="BtnLista:" destination="BZ0-bD-Edr" eventType="touchUpInside" id="5P3-ge-2OH"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" id="htz-hZ-Ih9">
-                                <rect key="frame" x="27" y="160" width="267" height="247"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.18714295060686326" green="0.22550339761880467" blue="1" alpha="0.17000000000000001" colorSpace="calibratedRGB"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6Dx-Cl-0DN">
                                 <rect key="frame" x="114" y="95" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -340,11 +335,17 @@
                                     <action selector="BtnGoogleMaps:" destination="BZ0-bD-Edr" eventType="touchUpInside" id="MgC-o2-CMf"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" id="htz-hZ-Ih9">
+                                <rect key="frame" x="27" y="128" width="267" height="247"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.18714295060686326" green="0.22550339761880467" blue="1" alpha="0.17000000000000001" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="Mapa" destination="htz-hZ-Ih9" id="HXc-UK-ozp"/>
                         <segue destination="ftS-bA-0rI" kind="modal" identifier="SegueMapasToMuestraDB" id="fgM-YH-sri"/>
                         <segue destination="oNJ-O1-z5l" kind="modal" identifier="SegueMapasToGogleMaps" id="xva-GR-AHF"/>
                         <segue destination="vXZ-lx-hvc" kind="modal" identifier="SegueMapasToIndex" id="iP4-qv-GdK"/>
@@ -448,8 +449,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="6gy-KQ-S0L"/>
-        <segue reference="UjV-gC-oTr"/>
-        <segue reference="vtM-0b-bMD"/>
+        <segue reference="iP4-qv-GdK"/>
+        <segue reference="XUN-6S-UvW"/>
+        <segue reference="fgM-YH-sri"/>
     </inferredMetricsTieBreakers>
 </document>

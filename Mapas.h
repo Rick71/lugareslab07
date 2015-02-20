@@ -8,11 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import <iAd/iAd.h>
+#import <MobileCoreServices/MobileCoreServices.h>
+#import <CoreLocation/CoreLocation.h>
+#import <GoogleMaps/GoogleMaps.h>
 
 //-----------------------------------------------------------------------------------------------------
 //agregar para banner.<UIApplicationDelegate, ADBannerViewDelegate>
 
-@interface Mapas : UIViewController<UIApplicationDelegate, ADBannerViewDelegate>
+@interface Mapas : UIViewController<UIApplicationDelegate, ADBannerViewDelegate, CLLocationManagerDelegate, GMSMapViewDelegate>
 {
     ADBannerView *adView;
     BOOL bannerIsVisible;
@@ -23,5 +26,8 @@
 - (IBAction)BtnInicio:(id)sender;
 - (IBAction)BtnLista:(id)sender;
 - (IBAction)BtnGoogleMaps:(id)sender;
+@property (strong, nonatomic) IBOutlet UIView *Mapa;
+@property (strong, nonatomic) CLLocationManager     *locationManager;
+@property (strong, nonatomic) CLLocation            *location;
 
 @end

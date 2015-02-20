@@ -8,6 +8,10 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import <GoogleMaps/GoogleMaps.h>
+
+#define LOCATIONS_FILE @"PWLocationTracking"
+#define LOCATIONS_FILE_TYPE @"log"
 
 @interface AppDelegate ()
 
@@ -23,6 +27,7 @@
     // Initialize Parse.
     [Parse setApplicationId:@"tlPnTwm1dVIzuuPXaJUoxyklBqbzJIFiU3FTyRtn"
                   clientKey:@"PaPupKDHMHb4XFx9rOZk1hnOrwP6YOgrT7U3x7QN"];
+    [GMSServices provideAPIKey:@"AIzaSyBMt-mYym7dLXexOQY8tfJ3BYNLQGOm_x0"];
     
     // [Optional] Track statistics around application opens.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];

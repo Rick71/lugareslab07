@@ -8,6 +8,13 @@
 
 #import "Mapas.h"
 
+NSString    *strUserLocation;
+float       mlatitude;
+float       mlongitude;
+
+GMSMapView *mapView;
+GMSMarker *markerInicio;
+
 @interface Mapas ()
 
 @end
@@ -15,9 +22,20 @@
 @implementation Mapas
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [super viewDidLoad];   
     
+    self.locationManager                    = [[CLLocationManager alloc] init];
+    self.locationManager.delegate           = self;
+    self.location                           = [[CLLocation alloc] init];
+    self.locationManager.desiredAccuracy    = kCLLocationAccuracyKilometer;
+    [self.locationManager  requestWhenInUseAuthorization];
+    [self.locationManager  requestAlwaysAuthorization];
+    
+    [self.locationManager startUpdatingLocation];
+    
+    [self MapaInicio];
+    // Do any additional setup after loading the view.
+
     //------------------------------------------------------------------------------------------------------
     //agregar para banner paso 01.
     [self cfgiAdBanner];
@@ -27,6 +45,23 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)MapaInicio{
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:mlatitude longitude:mlongitude zoom:16];
+    [self.Mapa layoutIfNeeded];
+    mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+    mapView.frame = CGRectMake(0, 0, self.Mapa.frame.size.width, self.Mapa.frame.size.height);
+    mapView.myLocationEnabled = YES;
+    
+    // Creates a marker in the center of the map.
+    markerInicio = [[GMSMarker alloc] init];
+    markerInicio.position = CLLocationCoordinate2DMake(mlatitude, mlongitude);
+    markerInicio.title = @"Usuario";
+    markerInicio.snippet = @"Usted esta aqui";
+    markerInicio.map = mapView;
+    
+    [self.Mapa addSubview:mapView];
 }
 
 /*
