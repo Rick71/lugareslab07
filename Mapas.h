@@ -11,6 +11,7 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <CoreLocation/CoreLocation.h>
 #import <GoogleMaps/GoogleMaps.h>
+#import <Parse/Parse.h>
 
 //-----------------------------------------------------------------------------------------------------
 //agregar para banner.<UIApplicationDelegate, ADBannerViewDelegate>

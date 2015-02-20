@@ -15,6 +15,13 @@ float       mlongitude;
 GMSMapView *mapView;
 GMSMarker *markerInicio;
 
+NSMutableArray *Nombre;
+NSMutableArray *Image;
+NSMutableArray *Descripcion;
+NSMutableArray *Lat;
+NSMutableArray *Lng;
+NSMutableArray *objetos;
+
 @interface Mapas ()
 
 @end
@@ -34,6 +41,8 @@ GMSMarker *markerInicio;
     [self.locationManager startUpdatingLocation];
     
     [self MapaInicio];
+    [self Consulta];
+    mapView.delegate = self;
     // Do any additional setup after loading the view.
 
     //------------------------------------------------------------------------------------------------------
@@ -45,6 +54,29 @@ GMSMarker *markerInicio;
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)Consulta{
+    Nombre = [[NSMutableArray alloc] init];
+    Image = [[NSMutableArray alloc] init];
+    Descripcion = [[NSMutableArray alloc] init];
+    Lat = [[NSMutableArray alloc] init];
+    Lng = [[NSMutableArray alloc] init];
+    //nos trae la Información de Parse.
+    PFQuery *query = [PFQuery queryWithClassName:@"Lugar"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+     {
+         objetos = [NSMutableArray arrayWithArray:objects];
+         for (int a=0;a<[objetos count];a++){
+             GMSMarker *marker = [[GMSMarker alloc] init];
+             marker.position = CLLocationCoordinate2DMake([objetos[a][@"Latitud"] floatValue], [objetos[a][@"Longitud"] floatValue]);
+             marker.title = objetos[a][@"name"];
+             marker.snippet = @"Click aqui para indicarte como llegar";
+             marker.map = mapView;
+         }
+         
+         
+     }];
 }
 
 - (void)MapaInicio{
@@ -59,6 +91,7 @@ GMSMarker *markerInicio;
     markerInicio.position = CLLocationCoordinate2DMake(mlatitude, mlongitude);
     markerInicio.title = @"Usuario";
     markerInicio.snippet = @"Usted esta aqui";
+    markerInicio.icon = [UIImage imageNamed:@"1424439603_1_26.png"];
     markerInicio.map = mapView;
     
     [self.Mapa addSubview:mapView];
@@ -73,6 +106,21 @@ GMSMarker *markerInicio;
          float mapLng = self.locationManager.location.coordinate.longitude;
          mapView.camera = [GMSCameraPosition cameraWithLatitude:mapLat longitude:mapLng zoom:16];
      }];
+}
+
+//Escucha el evento de tap en el infowindow enviando a google maps
+-(void)mapView:(GMSMapView *)mapView didTapInfoWindowOfMarker:(GMSMarker *)marker{
+    NSLog(@"%@", marker.title);
+    CLLocationCoordinate2D posicion =  marker.position;
+    float markerLat = posicion.latitude;
+    float markerLng = posicion.longitude;
+    NSLog(@"%.8f",markerLat);
+    NSString *direccion = [NSString stringWithFormat:@"comgooglemaps://?saddr=%.8f,%.8f&daddr=%.8f,%.8f&directionsmode=driving", markerLat, markerLng,mlatitude,mlongitude];
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"comgooglemaps://"]]) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:direccion]];
+    } else {
+        NSLog(@"Can't use comgooglemaps://");
+    }
 }
 
 /*
@@ -171,7 +219,7 @@ GMSMarker *markerInicio;
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     self.location = locations.lastObject;
-    NSLog( @"didUpdateLocation!");
+    //NSLog( @"didUpdateLocation!");
     CLGeocoder * geoCoder = [[CLGeocoder alloc] init];
     [geoCoder reverseGeocodeLocation:self.locationManager.location completionHandler:^(NSArray *placemarks, NSError *error)
      {

@@ -19,6 +19,8 @@
 		1D2480001A9701AF0099471A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D247FFF1A9701AF0099471A /* libz.dylib */; };
 		1D2480021A9701BD0099471A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2480011A9701BD0099471A /* libsqlite3.dylib */; };
 		1D2480041A9701E10099471A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2480031A9701E10099471A /* CoreData.framework */; };
+		1D2480091A971C6B0099471A /* 1424439603_1_26.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D2480081A971C6B0099471A /* 1424439603_1_26.png */; };
+		1D2480121A9722590099471A /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2480111A9722590099471A /* libGoogleAnalyticsServices.a */; };
 		1D9F34B41A95DA3500B75192 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D9F34B31A95DA3500B75192 /* iAd.framework */; };
 		1D9F34BA1A95DFD500B75192 /* Mapas.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9F34B91A95DFD500B75192 /* Mapas.m */; };
 		1D9F34BD1A969F4700B75192 /* GoogleMaps.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9F34BC1A969F4700B75192 /* GoogleMaps.m */; };
@@ -77,6 +79,14 @@
 		1D247FFF1A9701AF0099471A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		1D2480011A9701BD0099471A /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		1D2480031A9701E10099471A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		1D2480081A971C6B0099471A /* 1424439603_1_26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1424439603_1_26.png; sourceTree = "<group>"; };
+		1D24800B1A9722590099471A /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		1D24800C1A9722590099471A /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		1D24800D1A9722590099471A /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
+		1D24800E1A9722590099471A /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
+		1D24800F1A9722590099471A /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		1D2480101A9722590099471A /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		1D2480111A9722590099471A /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
 		1D9F34B31A95DA3500B75192 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		1D9F34B81A95DFD500B75192 /* Mapas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Mapas.h; path = ../Mapas.h; sourceTree = "<group>"; };
 		1D9F34B91A95DFD500B75192 /* Mapas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Mapas.m; path = ../Mapas.m; sourceTree = "<group>"; };
@@ -139,6 +149,7 @@
 				1D247FF41A9701470099471A /* CoreText.framework in Frameworks */,
 				1D247FF21A97013A0099471A /* AVFoundation.framework in Frameworks */,
 				1D9F34B41A95DA3500B75192 /* iAd.framework in Frameworks */,
+				1D2480121A9722590099471A /* libGoogleAnalyticsServices.a in Frameworks */,
 				1DB145C81A93268B007CB0D4 /* CoreLocation.framework in Frameworks */,
 				1DB145C61A93267B007CB0D4 /* StoreKit.framework in Frameworks */,
 				1DB145C41A932660007CB0D4 /* CoreGraphics.framework in Frameworks */,
@@ -181,6 +192,28 @@
 			path = googlemaps;
 			sourceTree = "<group>";
 		};
+		1D2480071A971C5B0099471A /* iconos */ = {
+			isa = PBXGroup;
+			children = (
+				1D2480081A971C6B0099471A /* 1424439603_1_26.png */,
+			);
+			name = iconos;
+			sourceTree = "<group>";
+		};
+		1D24800A1A9722590099471A /* GoogleAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				1D24800B1A9722590099471A /* GAI.h */,
+				1D24800C1A9722590099471A /* GAIDictionaryBuilder.h */,
+				1D24800D1A9722590099471A /* GAIFields.h */,
+				1D24800E1A9722590099471A /* GAILogger.h */,
+				1D24800F1A9722590099471A /* GAITrackedViewController.h */,
+				1D2480101A9722590099471A /* GAITracker.h */,
+				1D2480111A9722590099471A /* libGoogleAnalyticsServices.a */,
+			);
+			path = GoogleAnalytics;
+			sourceTree = "<group>";
+		};
 		1DB145691A931CD0007CB0D4 = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +237,7 @@
 		1DB145741A931CD0007CB0D4 /* lugareslab07 */ = {
 			isa = PBXGroup;
 			children = (
+				1D2480071A971C5B0099471A /* iconos */,
 				1DB145791A931CD0007CB0D4 /* AppDelegate.h */,
 				1DB1457A1A931CD0007CB0D4 /* AppDelegate.m */,
 				1DB1457F1A931CD0007CB0D4 /* Index.h */,
@@ -254,6 +288,7 @@
 		1DB145A11A932428007CB0D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1D24800A1A9722590099471A /* GoogleAnalytics */,
 				1D2480031A9701E10099471A /* CoreData.framework */,
 				1D2480011A9701BD0099471A /* libsqlite3.dylib */,
 				1D247FFF1A9701AF0099471A /* libz.dylib */,
@@ -389,6 +424,7 @@
 				1DB145841A931CD0007CB0D4 /* Main.storyboard in Resources */,
 				1DB145891A931CD0007CB0D4 /* LaunchScreen.xib in Resources */,
 				1DB145861A931CD0007CB0D4 /* Images.xcassets in Resources */,
+				1D2480091A971C6B0099471A /* 1424439603_1_26.png in Resources */,
 				1D247FEF1A96FF770099471A /* GoogleMaps.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -544,6 +580,10 @@
 				);
 				INFOPLIST_FILE = lugareslab07/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GoogleAnalytics",
+				);
 				OTHER_LDFLAGS = (
 					"-force_load",
 					"$(PROJECT_DIR)/googlemaps/GoogleMaps.framework/GoogleMaps",
@@ -563,6 +603,10 @@
 				);
 				INFOPLIST_FILE = lugareslab07/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GoogleAnalytics",
+				);
 				OTHER_LDFLAGS = (
 					"-force_load",
 					"$(PROJECT_DIR)/googlemaps/GoogleMaps.framework/GoogleMaps",

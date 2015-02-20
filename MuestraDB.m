@@ -43,7 +43,7 @@ NSMutableArray *objetos;
     PFQuery *query = [PFQuery queryWithClassName:@"Lugar"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
      {
-         objetos = [NSMutableArray arrayWithArray:objects];;
+         objetos = [NSMutableArray arrayWithArray:objects];
          [self.TblMain reloadData];
          //for (id object in objects){
          //[Nombre addObject:object[@"name"]];
