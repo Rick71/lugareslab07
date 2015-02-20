@@ -8,6 +8,7 @@
 
 #import "DataBase.h"
 
+UIAlertView     *alert;
 
 @interface DataBase ()
 
@@ -110,12 +111,38 @@
 - (IBAction)BtnGuardar:(id)sender {
     //Implementacion de Parse
     PFObject *testObject = [PFObject objectWithClassName:@"Lugar"];
+    
+    if ([self.TxtNombre.text isEqualToString:@""]|| [self.TxtDescripcion.text isEqualToString:@""] || [self.TxtLatitud.text isEqualToString:@""] || [self.TxtLongitud.text isEqualToString:@""])
+            
+        {
+            alert = [[UIAlertView alloc] initWithTitle:@"Alerta"
+                                               message:@"Tienes que llenar todos los campos"
+                                              delegate:self
+                                     cancelButtonTitle:@"Cancelar"
+                                     otherButtonTitles:nil];
+            [alert show];
+        }
+    
+        else
+    {
+        
     testObject[@"name"] = self.TxtNombre.text;
     testObject[@"descripcion"] = self.TxtDescripcion.text;
     testObject[@"Latitud"] = self.TxtLatitud.text;
     testObject[@"Longitud"] = self.TxtLongitud.text;
        [testObject saveInBackground];
+    
+    
+    self.TxtDescripcion.text = nil;
+    self.TxtLatitud.text = nil;
+    self.TxtLongitud.text = nil;
+    self.TxtNombre.text = nil;
+    }
+    
+    [self performSegueWithIdentifier:@"SegueDataBaseToIndex" sender:self];
+    
 }
+
 
 - (IBAction)BtnInicio:(id)sender {
     [self performSegueWithIdentifier:@"SegueDataBaseToIndex" sender:self];

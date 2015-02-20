@@ -10,10 +10,12 @@
 #import <Parse/Parse.h>
 #import <iAd/iAd.h>
 
+
+
 //-----------------------------------------------------------------------------------------------------
 //agregar para banner.<UIApplicationDelegate, ADBannerViewDelegate>
 
-@interface DataBase : UIViewController<UIApplicationDelegate, ADBannerViewDelegate>
+@interface DataBase : UIViewController<UIApplicationDelegate, ADBannerViewDelegate,UITableViewDataSource, UIAlertViewDelegate>
 {
     ADBannerView *adView;
     BOOL bannerIsVisible;
